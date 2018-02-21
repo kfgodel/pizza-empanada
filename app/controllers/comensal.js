@@ -1,9 +1,15 @@
 import Controller from '@ember/controller';
 import {A} from '@ember/array';
-import Object from '@ember/object';
+import Object, {computed} from '@ember/object';
 
 export default Controller.extend({
   menues: A(),
+  menuEsAgregable: computed('menu.comensal', 'menu.cantidadDeEmpanadas', 'menu.cantidadDePorciones', function () {
+    let seDefinioComensal = !!this.get('menu.comensal');
+    let definioCantidadDeEmpanadas = !!this.get('menu.cantidadDeEmpanadas');
+    let definioCantidadDePorciones = !!this.get('menu.cantidadDePorciones');
+    return seDefinioComensal && (definioCantidadDeEmpanadas || definioCantidadDePorciones);
+  }),
 
   init() {
     this._super(...arguments);
