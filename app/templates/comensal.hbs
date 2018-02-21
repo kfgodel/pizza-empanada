@@ -5,19 +5,19 @@
         <span class="card-title">Definir menu</span>
 
         <div class="row">
-          {{selector/de-comensal label="Comensal" comensalElegido=null col="s4" }}
+          {{selector/de-comensal label="Comensal" comensalElegido=menu.comensalElegido col="s4" }}
         </div>
 
         <div class="row">
-          {{tenpines/input-number label="Porciones de pizza" col="s3" min=0 max=8 }}
-          {{tenpines/input-number label="Empanadas" col="s3" min=0 max=8 }}
+          {{tenpines/input-number label="Porciones de pizza" value=menu.cantidadDePorciones min=0 max=8 col="s3"}}
+          {{tenpines/input-number label="Empanadas" value=menu.cantidadDeEmpanadas  min=0 max=8 col="s3"}}
         </div>
 
       </div>
 
       <div class="card-action">
         <div class="row">
-          {{tenpines/material-button label='Aceptar' submit=true col="offset-s10 s2" }}
+          {{tenpines/material-button label='Agregar' action='cerrarMenuYAgregar' submit=true col="offset-s10 s2" }}
         </div>
       </div>
     </div>
