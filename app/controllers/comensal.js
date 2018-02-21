@@ -1,8 +1,9 @@
 import Controller from '@ember/controller';
-import Ember from 'ember';
+import {A} from '@ember/array';
+import Object from '@ember/object';
 
 export default Controller.extend({
-  menues: Ember.A(),
+  menues: A(),
 
   init() {
     this._super(...arguments);
@@ -18,8 +19,8 @@ export default Controller.extend({
   },
 
   _crearMenuVacio() {
-    this.set('menu', Ember.Object.create({
-      comensalElegido: null,
+    this.set('menu', Object.create({
+      comensal: null,
       cantidadDeEmpanadas: 0,
       cantidadDePorciones: 0
     }));

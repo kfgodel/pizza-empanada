@@ -1,13 +1,14 @@
 import Component from '@ember/component';
-import Ember from 'ember';
+import {A} from '@ember/array';
+import Object from '@ember/object';
 
 export default Component.extend({
 
-  comensalesDisponibles: Ember.A([
-    Ember.Object.create({id: 1, nombre: 'Dario'}),
-    Ember.Object.create({id: 2, nombre: 'Lucas'}),
-    Ember.Object.create({id: 3, nombre: 'Gise'}),
-    Ember.Object.create({id: 4, nombre: 'Ludat'})
+  comensalesDisponibles: A([
+    Object.create({id: 1, nombre: 'Dario'}),
+    Object.create({id: 2, nombre: 'Lucas'}),
+    Object.create({id: 3, nombre: 'Gise'}),
+    Object.create({id: 4, nombre: 'Ludat'})
   ])
 
 });

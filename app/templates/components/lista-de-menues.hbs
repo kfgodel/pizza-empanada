@@ -1,0 +1,20 @@
+<table class="striped bordered centered">
+  <thead>
+  <tr>
+    <th>Comensal</th>
+    <th>Empanadas</th>
+    <th>Pizza</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each menues as |menu|}}
+    <tr>
+      <td>{{menu.comensal.nombre}}</td>
+      <td>{{menu.cantidadDeEmpanadas}}</td>
+      <td>{{menu.cantidadDePorciones}}</td>
+    </tr>
+  {{else}}
+    <em>Aun no se agregaron comensales</em>
+  {{/each}}
+  </tbody>
+</table>
