@@ -27,7 +27,17 @@ export default Controller.extend({
   },
 
   _agregarALaLista(menuNuevo) {
-    this.get('menues').addObject(menuNuevo);
+    let lista = this.get('menues');
+    let menuExistente = lista.findBy('comensal', menuNuevo.get('comensal'));
+    if (menuExistente) {
+      menuExistente.setProperties({
+        cantidadDeEmpanadas: menuNuevo.get('cantidadDeEmpanadas'),
+        cantidadDePorciones: menuNuevo.get('cantidadDePorciones')
+      })
+    } else {
+      // Es un nuevo comensal
+      lista.addObject(menuNuevo);
+    }
   }
 
 });
